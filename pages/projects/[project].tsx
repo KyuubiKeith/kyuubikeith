@@ -45,7 +45,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     content_type: 'projects',
     'fields.slug': params!.project
   })
-  console.log(params)
   if (!items.length) {
     return {
       redirect: {
