@@ -46,6 +46,7 @@ export interface TypeProjectsFields {
   featuredImageLink?: CFRichTextTypes.Block | CFRichTextTypes.Inline
   fields: any
   project: any
+  next: any
 }
 
 // ==================== Interfaces =====================//

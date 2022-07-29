@@ -37,24 +37,33 @@ export const getStaticProps: GetStaticProps = async () => {
 const Projects: NextPage<TypeProjectsFields> = ({ fields }) => {
   return (
     <>
-      <h1>Projects List</h1>
-
       {fields.map((project: any, index: number) => (
-        <Link
-          key={index}
-          href={{
-            pathname: `/projects/[project]`,
-            query: {
-              index,
-              slug: project.slug
-            }
-          }}
-          as={`/projects/${project.slug}`}
-        >
-          <a>
-            <h3>{project.name}</h3>
-          </a>
-        </Link>
+        <div key={index}>
+
+          <header>
+            <p>Project</p>
+            <p>{index + 1}</p>
+          </header>
+
+          <main>
+            <p>{project.work}</p>
+            <p>{project.client}</p>
+            <Link
+              href={{
+                pathname: `/projects/[project]`,
+                query: {
+                  index: index + 1,
+                  slug: project.slug
+                }
+              }}
+              as={`/projects/${project.slug}`}
+            >
+              <a>
+                <h3> Explore {project.name}</h3>
+              </a>
+            </Link>
+          </main>
+        </div>
       ))}
     </>
   )
