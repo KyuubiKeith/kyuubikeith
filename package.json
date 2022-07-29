@@ -1,6 +1,6 @@
 {
-  "name": "application",
-  "version": "0.1.0",
+  "name": "kyuubikeith_portfolio",
+  "version": "v0.0.1-beta",
   "private": true,
   "scripts": {
     "dev": "next dev",
