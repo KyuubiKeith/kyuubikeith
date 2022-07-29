@@ -1,4 +1,4 @@
-# Keith Kyuubi is a current resident of the earth.
+## Keith Kyuubi is a current resident of the earth.
 
 I strive to breath life into design through the use of code; considering myself a creative but stuck dab in the midst of design and development.😅
 I also strive to get myself conversant with the best technologies available and most effecient for my craft. As such, two companies have come up to achieve the desired effects. HavoxWorx & BlerdCorps.
@@ -36,7 +36,7 @@ The Tools used:
 ## Stack
 
 - React - NextJS
-- Redux - State Management
+- Redux (ReduxJs Toolkit) - State Management
 - Contentful - Content Management
 - Sass - Styling
 - Google Analytics / Google Search Console - SEO / Performance
