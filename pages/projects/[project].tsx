@@ -14,6 +14,9 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { EntryCollection } from 'contentful'
 
+// Fullpage JS
+import ReactFullpage from '@fullpage/react-fullpage'
+
 // ==================== Imports =====================//
 
 //
@@ -137,7 +140,7 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
 
             <div id="case-study">
               <p>Case Study</p>
-              <p>{documentToReactComponents(caseStudy)}</p>
+              {documentToReactComponents(caseStudy)}
 
               <div id="project-gallery">
                 {featured ? (
@@ -182,6 +185,31 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
           </nav>
         </footer>
       </div>
+
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              {' '}
+              <Link href={'#'}>
+                <a>View Next Project</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href={'../contact'}>
+                <a>Start A Project With Me</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href={'./#' + slug}>
+                <a>Back</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </footer>
     </>
   )
 }
