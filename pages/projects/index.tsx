@@ -9,6 +9,9 @@ import Link from 'next/link'
 import { Client } from '../../source/organisms/content/contentful'
 import { TypeProjectsFields } from '../../source/organisms/content/contentful'
 
+// Fullpage JS
+import ReactFullpage from '@fullpage/react-fullpage'
+
 // ==================== Imports =====================//
 
 //
@@ -34,28 +37,51 @@ export const getStaticProps: GetStaticProps = async () => {
 //
 
 // ==================== Render =====================//
-const Projects: NextPage<TypeProjectsFields> = ({ fields }) => {
+
+const opts = {
+  licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
+}
+
+const Projects: NextPage<TypeProjectsFields> = ({ fields }, props) => {
   return (
     <>
-      <h1>Projects List</h1>
+      <ReactFullpage
+        {...opts}
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.Wrapper>
+              {fields.map((project: any, index: number) => (
+                <div key={index} className='section' data-anchor={project.slug}>
+                  <header>
+                    <p>Project</p>
+                    <p>{index + 1}</p>
+                  </header>
 
-      {fields.map((project: any, index: number) => (
-        <Link
-          key={index}
-          href={{
-            pathname: `/projects/[project]`,
-            query: {
-              index,
-              slug: project.slug
-            }
-          }}
-          as={`/projects/${project.slug}`}
-        >
-          <a>
-            <h3>{project.name}</h3>
-          </a>
-        </Link>
-      ))}
+                  <main>
+                    <p>{project.work}</p>
+                    <p>{project.client}</p>
+                    <button onClick={() => fullpageApi.moveSectionDown()}>Hello</button>
+                    <Link
+                      href={{
+                        pathname: `/projects/[project]`,
+                        query: {
+                          index: index + 1,
+                          slug: project.slug
+                        }
+                      }}
+                      as={`/projects/${project.slug}`}
+                    >
+                      <a>
+                        <h3> Explore {project.name}</h3>
+                      </a>
+                    </Link>
+                  </main>
+                </div>
+              ))}
+            </ReactFullpage.Wrapper>
+          )
+        }}
+      />
     </>
   )
 }
