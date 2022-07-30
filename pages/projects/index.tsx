@@ -44,7 +44,6 @@ const opts = {
 
 const Projects: NextPage<TypeProjectsFields> = ({ fields }, props) => {
   return (
-    <>
       <ReactFullpage
         {...opts}
         render={({ state, fullpageApi }) => {
@@ -81,7 +80,6 @@ const Projects: NextPage<TypeProjectsFields> = ({ fields }, props) => {
           )
         }}
       />
-    </>
   )
 }
 

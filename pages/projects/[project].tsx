@@ -95,59 +95,95 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
     featuredImageLink,
     caseStudy
   } = project.fields
+
   return (
     <>
-      {featured ? (
-        <Image
-          src={'https:' + featured.fields.file.url}
-          height={featured.fields.file.details.image.height / 5}
-          width={featured.fields.file.details.image.width / 5}
-          alt={featured}
-        />
-      ) : (
-        <p>
-          <b>No featured Image.</b>
-        </p>
-      )}
+      <div>
+        <header id="featured-image">
+          {featured ? (
+            <Image
+              src={'https:' + featured.fields.file.url}
+              height={featured.fields.file.details.image.height / 5}
+              width={featured.fields.file.details.image.width / 5}
+              alt={featured}
+            />
+          ) : (
+            <p>
+              <b>No featured Image.</b>
+            </p>
+          )}
+        </header>
 
-      {logo ? (
-        <Image
-          src={'https:' + logo.fields.file.url}
-          height={logo.fields.file.details.image.height}
-          width={logo.fields.file.details.image.width}
-          alt={name}
-        />
-      ) : (
-        <p>Logo Missing</p>
-      )}
+        <main>
+          <section id="brand-identity">
+            {logo ? (
+              <Image
+                src={'https:' + logo.fields.file.url}
+                height={logo.fields.file.details.image.height}
+                width={logo.fields.file.details.image.width}
+                alt={name}
+              />
+            ) : (
+              <p>Logo Missing</p>
+            )}
 
-      <>
-        <p>Client</p>
-        <p>{client}</p>
-      </>
-      <>
-        <p>Project</p>
-        <p>{work}</p>
-      </>
+            <div id="project-details">
+              <>
+                <p>Client</p>
+                <p>{client}</p>
+              </>
+              <>
+                <p>Project</p>
+                <p>{work}</p>
+              </>
+            </div>
 
-      <div id="case-study">
-        <p>Case Study</p>
-        {documentToReactComponents(caseStudy)}
-      </div>
+            <div id="case-study">
+              <p>Case Study</p>
+              {documentToReactComponents(caseStudy)}
 
-      <div id="project-gallery">
-        {featured ? (
-          <Image
-            src={'https:' + featured.fields.file.url}
-            height={featured.fields.file.details.image.height / 5}
-            width={featured.fields.file.details.image.width / 5}
-            alt={featured}
-          />
-        ) : (
-          <p>
-            <b>No featured Image.</b>
-          </p>
-        )}
+              <div id="project-gallery">
+                {featured ? (
+                  <Image
+                    src={'https:' + featured.fields.file.url}
+                    height={featured.fields.file.details.image.height / 5}
+                    width={featured.fields.file.details.image.width / 5}
+                    alt={featured}
+                  />
+                ) : (
+                  <p>
+                    <b>No featured Image.</b>
+                  </p>
+                )}
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer>
+          <nav>
+            <ul>
+              <li>
+                {' '}
+                <Link href={`/${slug}`}>
+                  <a>View Next Project</a>
+                </Link>
+              </li>
+
+              <li>
+                <Link href={'../contact'}>
+                  <a>Start A Project With Me</a>
+                </Link>
+              </li>
+
+              <li>
+                <Link href="./">
+                  <a>Back</a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </footer>
       </div>
 
       <footer>
