@@ -113,7 +113,7 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
                 )}
               </div>
 
-              <main>
+              {/* <>
                 <section id="brand-identity">
                   {logo ? (
                     <Image
@@ -157,7 +157,7 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
                     </div>
                   </div>
                 </section>
-              </main>
+              </> */}
 
               <footer>
                 <nav>
