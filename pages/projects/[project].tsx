@@ -85,11 +85,57 @@ const renderOption = {
 }
 
 const Project: NextPage<TypeProjectsFields> = ({ project }) => {
-  const { slug, name, logo, client, work, featured, featuredImageLink, caseStudy } =
-    project.fields
+  const {
+    slug,
+    name,
+    logo,
+    client,
+    work,
+    featured,
+    featuredImageLink,
+    caseStudy
+  } = project.fields
   return (
     <>
-      <div id="featured-image">
+      {featured ? (
+        <Image
+          src={'https:' + featured.fields.file.url}
+          height={featured.fields.file.details.image.height / 5}
+          width={featured.fields.file.details.image.width / 5}
+          alt={featured}
+        />
+      ) : (
+        <p>
+          <b>No featured Image.</b>
+        </p>
+      )}
+
+      {logo ? (
+        <Image
+          src={'https:' + logo.fields.file.url}
+          height={logo.fields.file.details.image.height}
+          width={logo.fields.file.details.image.width}
+          alt={name}
+        />
+      ) : (
+        <p>Logo Missing</p>
+      )}
+
+      <>
+        <p>Client</p>
+        <p>{client}</p>
+      </>
+      <>
+        <p>Project</p>
+        <p>{work}</p>
+      </>
+
+      <div id="case-study">
+        <p>Case Study</p>
+        {documentToReactComponents(caseStudy)}
+      </div>
+
+      <div id="project-gallery">
         {featured ? (
           <Image
             src={'https:' + featured.fields.file.url}
@@ -103,50 +149,6 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
           </p>
         )}
       </div>
-
-      <section id="brand-identity">
-        {logo ? (
-          <Image
-            src={'https:' + logo.fields.file.url}
-            height={logo.fields.file.details.image.height}
-            width={logo.fields.file.details.image.width}
-            alt={name}
-          />
-        ) : (
-          <p>Logo Missing</p>
-        )}
-
-        <div id="project-details">
-          <>
-            <p>Client</p>
-            <p>{client}</p>
-          </>
-          <>
-            <p>Project</p>
-            <p>{work}</p>
-          </>
-        </div>
-
-        <div id="case-study">
-          <p>Case Study</p>
-          <p>{documentToReactComponents(caseStudy)}</p>
-
-          <div id="project-gallery">
-            {featured ? (
-              <Image
-                src={'https:' + featured.fields.file.url}
-                height={featured.fields.file.details.image.height / 5}
-                width={featured.fields.file.details.image.width / 5}
-                alt={featured}
-              />
-            ) : (
-              <p>
-                <b>No featured Image.</b>
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
 
       <footer>
         <nav>
@@ -178,6 +180,3 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
 
 export default Project
 // ==================== Render =====================//
-
-
-

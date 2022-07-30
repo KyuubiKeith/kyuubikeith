@@ -60,7 +60,6 @@ const Projects: NextPage<TypeProjectsFields> = ({ fields }, props) => {
                   <main>
                     <p>{project.work}</p>
                     <p>{project.client}</p>
-                    <button onClick={() => fullpageApi.moveSectionDown()}>Hello</button>
                     <Link
                       href={{
                         pathname: `/projects/[project]`,
