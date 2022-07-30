@@ -165,7 +165,7 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
             <ul>
               <li>
                 {' '}
-                <Link href={`/${slug}`}>
+                <Link href={'#'}>
                   <a>View Next Project</a>
                 </Link>
               </li>
@@ -177,7 +177,7 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
               </li>
 
               <li>
-                <Link href="./">
+                <Link href={'./#' + slug}>
                   <a>Back</a>
                 </Link>
               </li>
@@ -185,31 +185,6 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
           </nav>
         </footer>
       </div>
-
-      <footer>
-        <nav>
-          <ul>
-            <li>
-              {' '}
-              <Link href={'#'}>
-                <a>View Next Project</a>
-              </Link>
-            </li>
-
-            <li>
-              <Link href={'../contact'}>
-                <a>Start A Project With Me</a>
-              </Link>
-            </li>
-
-            <li>
-              <Link href={'./#' + slug}>
-                <a>Back</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </footer>
     </>
   )
 }
