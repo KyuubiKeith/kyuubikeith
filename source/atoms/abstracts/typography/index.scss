@@ -1,0 +1,149 @@
+@use './font-imports' as *;
+
+:root {
+
+
+  // Font Families || Typefaces || Fonts 
+
+  --bree-serif-regular: 'Bree Serif Regular', serif;
+  --bree-serif-light: 'Bree Serif Light', serif;
+
+  --btCooper-medium: 'BT Cooper Medium', serif;
+  --btCooper-mediumItalic: 'BT Cooper MediumItalic', cursive;
+  --btCooper-light: 'BT Cooper Light', serif;
+  --btCooper-lightItalic: 'BT Cooper LightItalic', cursive;
+
+  --fontin-regular: 'Fontin Regular', serif;
+  --fontin-bold: 'Fontin Bold', serif;
+
+  --gooper-bold: 'Fontin Bold', serif;
+
+  --means-web-light: 'Means Web Light', serif;
+
+
+  --circular-book: 'Circular Book', sans-serif;
+  --circular-light: 'Circular Light', sans-serif;
+
+  --marselis: 'Marselis', sans-serif;
+  --marselis-italic: 'Marselis Italic', sans-serif;
+  --marselis-light: 'Marselis Light', sans-serif;
+  --marselis-lightItalic: 'Marselis LightItalic', sans-serif;
+
+  --sohne-extralight: 'Söhne extraLight', sans-serif;
+  --sohne-light: 'Söhne Light', sans-serif;
+  --sohne-book: 'Söhne Book', sans-serif;
+
+  --averta-light: 'Averta LightItalic', cursive;
+  --averta-regular: 'Averta RegularItalic', cursive;
+
+  --overlock: 'Overlock', sans-serif;
+
+  --helvetica: 'Helvetica Now Display', sans-serif;
+
+  --inter-var: 'Inter Variable', sans-serif;
+  --inter-regular: 'Inter Regular', sans-serif;
+
+  --black-sans-light: 'Black Sans Light', sans-serif;
+  --black-sans-regular: 'Black Sans Regular', sans-serif;
+  --black-sans-bold: 'Black Sans Bold', sans-serif;
+
+  --product-sans-bold: 'Product Sans Bold', sans-serif;
+  --product-sans-regular: 'Product Sans Regular', sans-serif;
+  --product-sans-italic: 'Product Sans Italic', sans-serif;
+  --product-sans-thin: 'Product Sans Thin', sans-serif;
+  --product-sans-thin-italic: 'Product Sans Thin Italic', sans-serif;
+
+  --google-sans-text-regular: 'Google Sans Text Regular', sans-serif;
+
+  --operator-light: 'Operator Light', serif;
+  --operator-book: 'Operator Book', serif;
+
+  --surco-light: 'Surco Light', sans-serif;
+
+  
+  // Body Text 
+  --body: 1.02rem;
+
+
+  // Display Text
+  --h1: clamp(3.052rem, 1.618vw, 11.089rem);
+  --h2: clamp(2.441rem, 1.618vw, 6.854rem);
+  --h3: clamp(1.953rem, 1.618vw, 4.236rem);
+  --h4: clamp(1.563rem, 1.618vw, 2.618rem);
+  --h5: clamp(1.25rem, 1.618vw, 1.618rem);
+
+
+  // Functional Text
+  --anchor: clamp(0.8rem, 1.618vw, 0.618rem);
+  --breadcrumbs: clamp(0.8rem, 1.618vw, 0.618rem);
+  --small: clamp(0.8rem, 1.618vw, 0.618rem);
+
+
+
+}
+
+
+html,
+body {
+  font-family: var(--circular-book);
+  font-size: var(--body);
+
+  -webkit-text-size-adjust: 100%;
+  /* Prevent font scaling in landscape while allowing user zoom */
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+
+  font-weight: 200 !important;
+  line-height: 1.75;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2rem 0 1.38rem;
+  line-height: 1.3;
+}
+
+
+h1 {
+  font-family: var(--bree-serif-regular);
+  font-size: var(--h1);
+}
+
+h2 {
+  font-family: var(--fontin-regular);
+  font-size: var(--h2);
+}
+
+h3 {
+  font-family: var(--btCooper-light);
+  font-size: var(--h3);
+}
+
+h4 {
+  font-family: var(--btCooper-lightItalic);
+  font-size: var(--h4);
+}
+
+h5 {
+  font-family: var(--bree-serif-light);
+  font-size: var(--h5);
+}
+
+h6 {
+  font-family: var(--google-sans-text-regular);
+  font-size: var(--h5);
+}
+
+p {
+  font-family: var(--circular-light);
+  font-size: var(--body);
+}
+
+a {
+  font-family: var(--btCooper-lightItalic);
+  font-size: var(--anchor);
+}

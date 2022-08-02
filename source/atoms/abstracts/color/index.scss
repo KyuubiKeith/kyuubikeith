@@ -1,0 +1,28 @@
+:root {
+
+  /* Brand Foundation */
+    --brand-hue: 123;
+    --brand-saturation: 28%;
+    --brand-lightness: 37%; 
+    
+  
+    --ignis: hwb(160 96% 1%);
+    --noctus: hwb(0 9% 91%);
+
+    
+    --solari: hwb(54 16% 8%);
+    --lunari: hwb(80 94% 4%);
+
+
+    --spotifyGreen: #1DB954;
+    --matteGreen: hwb(123 28% 37%);
+
+
+    --brandColor: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
+    --brandLight: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));    
+    --brandDark: hsl(var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 1.5));
+
+
+    accent-color: var(--brandColor);
+
+}
