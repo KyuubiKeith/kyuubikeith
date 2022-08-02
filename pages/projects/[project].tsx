@@ -9,7 +9,7 @@ import Link from 'next/link'
 import {
   Client,
   TypeProjectsFields
-} from '../../../organisms/content/contentful'
+} from '../../source/organisms/content/contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { EntryCollection } from 'contentful'
@@ -103,9 +103,9 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
           {featured ? (
             <Image
               src={'https:' + featured.fields.file.url}
-              height={featured.fields.file.details.image.height / 5}
-              width={featured.fields.file.details.image.width / 5}
-              alt={featured}
+              height={featured.fields.file.details.image?.height / 5}
+              width={featured.fields.file.details.image?.width / 5}
+              alt={featured.fields.title}
             />
           ) : (
             <p>
@@ -147,7 +147,7 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
                   <Image
                     src={'https:' + featured.fields.file.url}
                     height={featured.fields.file.details.image.height / 5}
-                    width={featured.fields.file.details.image.width / 5}
+                    width={featured.fields.file.details.image?.width / 5}
                     alt={featured}
                   />
                 ) : (
