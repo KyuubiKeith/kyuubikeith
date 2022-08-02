@@ -146,7 +146,7 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
                 {featured ? (
                   <Image
                     src={'https:' + featured.fields.file.url}
-                    height={featured.fields.file.details.image?.width}
+                    height={featured.fields.file.details.image?.height}
                     width={featured.fields.file.details.image?.width}
                     alt={featured.fields.title}
                   />
