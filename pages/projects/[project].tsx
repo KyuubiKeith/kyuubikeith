@@ -9,7 +9,7 @@ import Link from 'next/link'
 import {
   Client,
   TypeProjectsFields
-} from '../../source/organisms/content/contentful'
+} from '../../../organisms/content/contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { EntryCollection } from 'contentful'

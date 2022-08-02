@@ -42,18 +42,27 @@ const opts = {
   licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
 }
 
-const Projects: NextPage<TypeProjectsFields> = ({ fields }, props) => {
+const Projects: NextPage<TypeProjectsFields> = ({ fields }) => {
+
   return (
-      <ReactFullpage
-        {...opts}
-        render={({ state, fullpageApi }) => {
-          return (
-            <ReactFullpage.Wrapper>
-              {fields.map((project: any, index: number) => (
-                <div key={index} className='section' data-anchor={project.slug}>
+    <ReactFullpage
+      {...opts}
+      render={({ state, fullpageApi }) => {
+        return (
+          <ReactFullpage.Wrapper>
+            {fields
+              .sort((a: { projectId: number }, b: { projectId: number }) => {
+                return a.projectId - b.projectId
+              })
+              .map((project: TypeProjectsFields) => (
+                <div
+                  key={project.projectId}
+                  className="section"
+                  data-anchor={project.slug}
+                >
                   <header>
                     <p>Project</p>
-                    <p>{index + 1}</p>
+                    <p>{project.projectId}</p>
                   </header>
 
                   <main>
@@ -63,7 +72,7 @@ const Projects: NextPage<TypeProjectsFields> = ({ fields }, props) => {
                       href={{
                         pathname: `/projects/[project]`,
                         query: {
-                          index: index + 1,
+                          index: project.projectId,
                           slug: project.slug
                         }
                       }}
@@ -76,10 +85,10 @@ const Projects: NextPage<TypeProjectsFields> = ({ fields }, props) => {
                   </main>
                 </div>
               ))}
-            </ReactFullpage.Wrapper>
-          )
-        }}
-      />
+          </ReactFullpage.Wrapper>
+        )
+      }}
+    />
   )
 }
 
