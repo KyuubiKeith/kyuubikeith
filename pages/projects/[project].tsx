@@ -103,8 +103,8 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
           {featured ? (
             <Image
               src={'https:' + featured.fields.file.url}
-              height={featured.fields.file.details.image?.height / 5}
-              width={featured.fields.file.details.image?.width / 5}
+              height={featured.fields.file.details.image?.height}
+              width={featured.fields.file.details.image?.width}
               alt={featured.fields.title}
             />
           ) : (
@@ -119,8 +119,8 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
             {logo ? (
               <Image
                 src={'https:' + logo.fields.file.url}
-                height={logo.fields.file.details.image.height}
-                width={logo.fields.file.details.image.width}
+                height={logo.fields.file.details.image?.height}
+                width={logo.fields.file.details.image?.width}
                 alt={name}
               />
             ) : (
@@ -146,9 +146,9 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
                 {featured ? (
                   <Image
                     src={'https:' + featured.fields.file.url}
-                    height={featured.fields.file.details.image.height / 5}
-                    width={featured.fields.file.details.image?.width / 5}
-                    alt={featured}
+                    height={featured.fields.file.details.image?.width}
+                    width={featured.fields.file.details.image?.width}
+                    alt={featured.fields.title}
                   />
                 ) : (
                   <p>
