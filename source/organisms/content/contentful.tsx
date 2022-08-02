@@ -45,6 +45,7 @@ export interface TypeProjectsFields {
   caseStudy?: CFRichTextTypes.Block | CFRichTextTypes.Inline
   featuredImageLink?: CFRichTextTypes.Block | CFRichTextTypes.Inline
   fields: TypeProjectsFields
+  project: TypeProjectsFields
   map: any
   sort: any
 }
