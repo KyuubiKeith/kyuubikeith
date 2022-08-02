@@ -11,7 +11,7 @@ import {
   TypeProjectsFields
 } from '../../source/organisms/content/contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { BLOCKS, INLINES } from '@contentful/rich-text-types'
+import { BLOCKS, Document } from '@contentful/rich-text-types'
 import { EntryCollection } from 'contentful'
 
 // Fullpage JS
@@ -140,7 +140,7 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
 
             <div id="case-study">
               <p>Case Study</p>
-              {documentToReactComponents(caseStudy)}
+              {documentToReactComponents(caseStudy as Document)}
 
               <div id="project-gallery">
                 {featured ? (
