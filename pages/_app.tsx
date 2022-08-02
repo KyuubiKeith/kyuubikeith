@@ -1,3 +1,5 @@
+// Styling
+import '../source/blerdCorps.scss'
 
 import type { AppProps } from 'next/app'
 
