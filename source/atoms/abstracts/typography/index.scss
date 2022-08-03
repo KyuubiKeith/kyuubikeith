@@ -60,7 +60,7 @@
 
   --surco-light: 'Surco Light', sans-serif;
 
-  
+
   // Body Text 
   --body: 1.02rem;
 
@@ -111,6 +111,7 @@ h5 {
 h1 {
   font-family: var(--bree-serif-regular);
   font-size: var(--h1);
+
 }
 
 h2 {
@@ -146,4 +147,14 @@ p {
 a {
   font-family: var(--btCooper-lightItalic);
   font-size: var(--anchor);
+}
+
+.Enso {
+  path {
+      fill: coral
+    }
+}
+
+svg .path {
+  fill: coral
 }

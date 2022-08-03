@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
 // ==================== Render =====================//
 
 const opts = {
-  licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
+  licenseKey: 'gplv3-license'
 }
 
 const Projects: NextPage<TypeProjectsFields> = ({ fields }) => {
@@ -69,11 +69,11 @@ const Projects: NextPage<TypeProjectsFields> = ({ fields }) => {
                     <p>{project.work}</p>
                     <p>{project.client}</p>
                     <Link
+                      // href={`/projects/${project.slug}`}
                       href={{
-                        pathname: `/projects/[project]`,
+                        pathname: `/projects/${project.slug}`,
                         query: {
-                          index: project.projectId,
-                          slug: project.slug
+                          nextProject: project.projectId + 1,
                         }
                       }}
                       as={`/projects/${project.slug}`}

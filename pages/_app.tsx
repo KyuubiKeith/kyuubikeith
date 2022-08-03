@@ -1,10 +1,25 @@
+// ==================== Imports =====================//
+
+//Next JS
+import type { AppProps } from 'next/app'
+
 // Styling
 import '../source/blerdCorps.scss'
 
-import type { AppProps } from 'next/app'
+// ==================== Imports =====================//
 
-function MyApp({ Component, pageProps }: AppProps) {
+//
+
+// ==================== Query =====================//
+// ==================== Query =====================//
+
+//
+
+// ==================== Render =====================//
+function Initium({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default Initium
+// ==================== Render =====================//
+
