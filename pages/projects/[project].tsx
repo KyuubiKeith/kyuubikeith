@@ -2,6 +2,7 @@
 
 // NextJS
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -58,7 +59,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   return {
-    props: { project: items[0] },
+    props: {
+      project: items[0]
+    },
     revalidate: 1
   }
 }
@@ -84,8 +87,46 @@ const renderOption = {
   }
 }
 
+const NextProject = () => {
+  const router = useRouter()
+  const nextProject = router.query
+  console.log(nextProject)
+  return (
+    <>
+      <p>
+        next project id{' '}
+        <span style={{ fontWeight: '700', color: 'coral' }}>
+          {nextProject.nextProject}
+        </span>
+      </p>
+      <p>next project name</p>
+      <p>
+        current project name{' '}
+        <span style={{ fontWeight: '700', color: 'coral' }}>
+          {nextProject.project}
+        </span>
+      </p>
+      <Link
+        href={{
+          pathname: `/projects/${nextProject.nextProject}`,
+          query: {}
+        }}
+        as={`/projects/${nextProject.nextProject}`}
+      >
+        <a>
+          View Next Project{' '}
+          <span style={{ fontWeight: '700', color: 'coral' }}>
+            {nextProject.project}
+          </span>{' '}
+        </a>
+      </Link>
+    </>
+  )
+}
+
 const Project: NextPage<TypeProjectsFields> = ({ project }) => {
   const {
+    projectId,
     slug,
     name,
     logo,
@@ -164,10 +205,7 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
           <nav>
             <ul>
               <li>
-                {' '}
-                <Link href={'#'}>
-                  <a>View Next Project</a>
-                </Link>
+                <NextProject />
               </li>
 
               <li>
