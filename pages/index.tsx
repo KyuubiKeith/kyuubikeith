@@ -3,6 +3,7 @@
 // NextJS
 import type { NextPage } from 'next'
 import Image from 'next/image'
+import Head from 'next/head'
 
 // ==================== Imports =====================//
 
@@ -12,6 +13,11 @@ import Image from 'next/image'
 const Home: NextPage = () => {
   return (
     <>
+
+      <Head>
+       <meta name="google-site-verification" content="27j2PYwrO2uQD8BS6_IQ2VUn2L7ymIa3pohFauLplKs" />
+      </Head>
+
       <section>
         <p>Hi!, I&#39;m Keith Kyuubi</p>
       </section>
