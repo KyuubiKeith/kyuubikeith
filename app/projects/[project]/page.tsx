@@ -1,72 +1,18 @@
 // ==================== Imports =====================//
 
 // NextJS
-import type { NextPage, GetStaticPaths, GetStaticProps } from 'next'
-import { useRouter } from 'next/router'
+import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
 // Contentful Client
-import {
-  Client,
-  TypeProjectsFields
-} from '../../source/organisms/content/contentful'
+import { Client } from '../../../source/organisms/content/contentful'
+import { TypeProjectsFields } from '../../../source/organisms/content/contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, Document } from '@contentful/rich-text-types'
 import { EntryCollection } from 'contentful'
 
-// Fullpage JS
-import ReactFullpage from '@fullpage/react-fullpage'
-
 // ==================== Imports =====================//
-
-//
-
-// ==================== Query =====================//
-
-/** Generate Individual Page at Build Time **/
-export const getStaticPaths: GetStaticPaths = async () => {
-  const { items }: EntryCollection<TypeProjectsFields> =
-    await Client.getEntries({
-      content_type: 'projects'
-    })
-
-  const paths = items.map((Project) => {
-    return {
-      params: { project: Project.fields.slug }
-    }
-  })
-
-  return {
-    paths,
-    fallback: false
-  }
-}
-
-/** Generate Individual Page Data **/
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { items } = await Client.getEntries({
-    content_type: 'projects',
-    'fields.slug': params!.project
-  })
-  if (!items.length) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false
-      }
-    }
-  }
-
-  return {
-    props: {
-      project: items[0]
-    },
-    revalidate: 1
-  }
-}
-
-// ==================== Query =====================//
 
 //
 
@@ -87,55 +33,37 @@ const renderOption = {
   }
 }
 
-const NextProject = () => {
-  const router = useRouter()
-  const nextProject = router.query
-  console.log(nextProject)
-  return (
-    <>
-      <p>
-        next project id{' '}
-        <span style={{ fontWeight: '700', color: 'coral' }}>
-          {nextProject.nextProject}
-        </span>
-      </p>
-      <p>next project name</p>
-      <p>
-        current project name{' '}
-        <span style={{ fontWeight: '700', color: 'coral' }}>
-          {nextProject.project}
-        </span>
-      </p>
-      <Link
-        href={{
-          pathname: `/projects/${nextProject.nextProject}`,
-          query: {}
-        }}
-        as={`/projects/${nextProject.nextProject}`}
-      >
-        <a>
-          View Next Project{' '}
-          <span style={{ fontWeight: '700', color: 'coral' }}>
-            {nextProject.project}
-          </span>{' '}
-        </a>
-      </Link>
-    </>
-  )
-}
+export default async function Project({ params }: TypeProjectsFields) {
 
-const Project: NextPage<TypeProjectsFields> = ({ project }) => {
-  const {
-    projectId,
-    slug,
-    name,
-    logo,
-    client,
-    work,
-    featured,
-    featuredImageLink,
-    caseStudy
-  } = project.fields
+ const { items } = await Client.getEntries({
+   content_type: 'projects',
+   'fields.slug': params!.project
+ })
+ if (!items.length) {
+   return {
+     redirect: {
+       destination: '/',
+       permanent: false
+     }
+   }
+ }
+
+
+  const project: TypeProjectsFields = items[0] as TypeProjectsFields
+  // console.log(project.fields)
+
+
+    const {
+      projectId,
+      slug,
+      name,
+      logo,
+      client,
+      work,
+      featured,
+      featuredImageLink,
+      caseStudy
+    } = project.fields as TypeProjectsFields
 
   return (
     <>
@@ -162,7 +90,7 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
                 src={'https:' + logo.fields.file.url}
                 height={logo.fields.file.details.image?.height}
                 width={logo.fields.file.details.image?.width}
-                alt={name}
+                alt={`${name}`}
               />
             ) : (
               <p>Logo Missing</p>
@@ -205,18 +133,18 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
           <nav>
             <ul>
               <li>
-                <NextProject />
+                {/* <NextProject /> */}
               </li>
 
               <li>
                 <Link href={'../contact'}>
-                  <a>Start A Project With Me</a>
+                  <p>Start A Project With Me</p>
                 </Link>
               </li>
 
               <li>
-                <Link href={'./#' + slug}>
-                  <a>Back</a>
+                <Link href={'/projects#' + slug}>
+                  <p>Back</p>
                 </Link>
               </li>
             </ul>
@@ -227,5 +155,4 @@ const Project: NextPage<TypeProjectsFields> = ({ project }) => {
   )
 }
 
-export default Project
 // ==================== Render =====================//
