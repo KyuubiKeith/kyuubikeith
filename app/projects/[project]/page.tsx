@@ -1,7 +1,6 @@
 // ==================== Imports =====================//
 
 // NextJS
-import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -10,7 +9,6 @@ import { Client } from '../../../source/organisms/content/contentful'
 import { TypeProjectsFields } from '../../../source/organisms/content/contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, Document } from '@contentful/rich-text-types'
-import { EntryCollection } from 'contentful'
 
 // ==================== Imports =====================//
 
@@ -33,21 +31,12 @@ const renderOption = {
   }
 }
 
-export default async function Project({ params }: TypeProjectsFields) {
+export default async function Project({params}: TypeProjectsFields) {
 
  const { items } = await Client.getEntries({
    content_type: 'projects',
-   'fields.slug': params!.project
+   'fields.slug': params?.slug
  })
- if (!items.length) {
-   return {
-     redirect: {
-       destination: '/',
-       permanent: false
-     }
-   }
- }
-
 
   const project: TypeProjectsFields = items[0] as TypeProjectsFields
   // console.log(project.fields)

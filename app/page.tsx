@@ -4,7 +4,6 @@
 import '../source/blerdCorps.scss'
 
 // NextJS
-import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -13,7 +12,8 @@ import Link from 'next/link'
 //
 
 // ==================== Render =====================//
-const Home: NextPage = () => {
+
+function Home() {
   return (
     <>
       <section>
@@ -32,9 +32,7 @@ const Home: NextPage = () => {
       <section>
         <p>Welcome to my portfolio website</p>
 
-        <Link href={'/projects'}>
-          projects
-        </Link>
+        <Link href={'/projects'}>projects</Link>
 
         <Image
           src="/Images/Aesthetics/EnsoCircle.svg"
