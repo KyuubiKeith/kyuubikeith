@@ -18,21 +18,20 @@ import Project from './project'
 
 export default async function Projects() {
 
-  // console.log(project)
-  // console.log(params)
-
   const data = await Client.getEntries({
     content_type: 'projects'
   })
 
-  const project: TypeProjectsFields = data.items.map(
+  const projectData: TypeProjectsFields = data.items.map(
     (project) => project.fields
   )
+
+  // console.log(projectData)
 
   return (
 
     <>
-      {project
+      {projectData
         .sort((a: { projectId: number }, b: { projectId: number }) => {
           return a.projectId - b.projectId
         })

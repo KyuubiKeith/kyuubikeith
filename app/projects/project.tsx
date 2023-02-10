@@ -1,6 +1,28 @@
+// ==================== Imports =====================//
+
+'use client'
+
+// NextJS
 import Link from 'next/link'
 import Image from 'next/image'
 import { TypeProjectsFields } from '@/source/organisms/content/contentful'
+
+// ==================== Imports =====================//
+
+//
+
+// ==================== Query =====================//
+// ==================== Query =====================//
+
+//
+
+// ==================== Render =====================//
+// ==================== Render =====================//
+
+
+
+
+
 
 export default function Project({
   projectId,
@@ -9,6 +31,7 @@ export default function Project({
   name,
   client
 }: TypeProjectsFields) {
+  
   return (
     <div
       key={projectId}
@@ -32,7 +55,7 @@ export default function Project({
               nextProject: projectId! + 1
             }
           }}
-          as={`/projects/${slug}`}
+          as={`/projects/${projectId}`}
         >
           <h3> Explore {name}</h3>
         </Link>
