@@ -1,11 +1,4 @@
 // ==================== Imports =====================//
-
-//Next JS
-import type { AppProps } from 'next/app'
-
-// Styling
-import '../source/blerdCorps.scss'
-
 // ==================== Imports =====================//
 
 //
@@ -16,10 +9,23 @@ import '../source/blerdCorps.scss'
 //
 
 // ==================== Render =====================//
-function Initium({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+
+export default function Head() {
+  // console.log(name)
+  return (
+    <>
+      <title>title</title>
+      <meta
+        content="width=device-width, initial-scale=1"
+        name="viewport"
+      />
+      <link
+        rel="icon"
+        href="/favicon.ico"
+      />
+    </>
+  )
 }
 
-export default Initium
 // ==================== Render =====================//
 
