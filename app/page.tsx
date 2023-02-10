@@ -1,8 +1,5 @@
 // ==================== Imports =====================//
 
-// Styling
-import '../source/blerdCorps.scss'
-
 // NextJS
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,9 +8,14 @@ import Link from 'next/link'
 
 //
 
+// ==================== Query =====================//
+// ==================== Query =====================//
+
+//
+
 // ==================== Render =====================//
 
-function Home() {
+export default function Home() {
   return (
     <>
       <section>
@@ -46,5 +48,6 @@ function Home() {
   )
 }
 
-export default Home
+
 // ==================== Render =====================//
+

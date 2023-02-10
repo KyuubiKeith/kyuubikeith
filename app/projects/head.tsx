@@ -1,8 +1,4 @@
 // ==================== Imports =====================//
-
-// Styling
-import '@/source/blerdCorps.scss'
-
 // ==================== Imports =====================//
 
 //
@@ -14,18 +10,19 @@ import '@/source/blerdCorps.scss'
 
 // ==================== Render =====================//
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
+export default function Head() {
   return (
-    <html>
-      <head />
-      <body>
-        {children}
-      </body>
-    </html>
+    <>
+      <title>KyuubiKeith Portfolio Project List</title>
+      <meta
+        content="width=device-width, initial-scale=1"
+        name="viewport"
+      />
+      <link
+        rel="icon"
+        href="/favicon.ico"
+      />
+    </>
   )
 }
 
