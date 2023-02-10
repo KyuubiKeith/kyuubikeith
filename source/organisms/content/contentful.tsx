@@ -35,7 +35,7 @@ export interface TypeBrandIdentityFields {
 }
 
 export interface TypeProjectsFields {
-  projectId?: Contentful.EntryFields.Integer
+  projectId?: Contentful.EntryFields.Integer | number
   name?: Contentful.EntryFields.Symbol
   slug?: Contentful.EntryFields.Symbol
   logo?: Contentful.Asset
@@ -47,7 +47,7 @@ export interface TypeProjectsFields {
   fields?: TypeProjectsFields
   project?: TypeProjectsFields
   projectData?: TypeProjectsFields
-  params?: TypeProjectsFields
+  params?: number
   items?: TypeProjectsFields
   map?: any
   sort?: any
