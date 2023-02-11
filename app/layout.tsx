@@ -1,33 +1,18 @@
-// ==================== Imports =====================//
-
-// Styling
-import '@/source/blerdCorps.scss'
-
-// ==================== Imports =====================//
-
-//
-
-// ==================== Query =====================//
-// ==================== Query =====================//
-
-//
-
-// ==================== Render =====================//
+import './globals.css'
 
 export default function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html>
+    <html lang="en">
+      {/*
+        <head /> will contain the components returned by the nearest parent
+        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
+      */}
       <head />
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
-
-// ==================== Render =====================//
-
