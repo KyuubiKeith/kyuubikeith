@@ -33,8 +33,9 @@ import { Fragment } from 'react';
 
 // }
 
-export default async function Project() {
+export default async function Project({params}: any) {
     
+  const projectId = params['projectId']
   const { items } = await Client.getEntries({
     content_type: 'projects'
   })
@@ -43,7 +44,7 @@ export default async function Project() {
   // console.log(params['projectId'])
 
   const {
-    projectId,
+    // projectId,
     name,
     slug,
     logo,
@@ -52,9 +53,9 @@ export default async function Project() {
     featured,
     featuredImageLink,
     caseStudy
-  } = items[0].fields as TypeProjectsFields
+  } = items[projectId].fields as TypeProjectsFields
 
-  // console.log(projectId)
+  console.log(projectId)
 
   return (
     <Project_
