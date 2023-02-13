@@ -4,9 +4,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-// React
-import React from 'react'
-
 // ==================== Imports =====================//
 
 //
@@ -22,27 +19,41 @@ export default function Projects() {
 
   return (
 
-    <React.StrictMode>
-      <ol>
-        <li>
+    <>
 
-          <header>
-            <h3>Sample Project Title</h3>
-          </header>
+      <header>
+        <h1>
+          List Of Projects.
+        </h1>
+      </header>
 
-          <main>
-            <h5>Sample Project Description</h5>
-          </main>
+      <main>
+        <ol>
+          <li>
 
-          <footer>
-            <Link href={'/projects/project-details'}>
-              Sample Project Link
-            </Link>
-          </footer>
+            <header>
+              <h3>Sample Project Title</h3>
+            </header>
 
-        </li>
-      </ol>
-    </React.StrictMode>
+            <main>
+              <h5>Sample Project Description</h5>
+            </main>
+
+            <footer>
+              <Link href={'/projects/project-details'}>
+                Sample Project Link
+              </Link>
+            </footer>
+
+          </li>
+        </ol>
+      </main>
+
+      <footer>
+        <Link href={'/'}>Back Home</Link>
+      </footer>
+
+    </>
 
   )
 }

@@ -24,21 +24,7 @@ export default function ProjectsLayout({
 
   return (
     <>
-
-      <header>
-        <h1>
-          List Of Projects.
-        </h1>
-      </header>
-
-      <main>
-        {children}
-      </main>
-
-      <footer>
-        <Link href={'/'}>Back Home</Link>
-      </footer>
-
+      {children}
     </>
   )
 }
