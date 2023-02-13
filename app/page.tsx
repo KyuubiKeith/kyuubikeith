@@ -1,19 +1,28 @@
 // ==================== Imports =====================//
 
-
 // NextJS
 import Image from 'next/image'
 import Link from 'next/link'
+
+// React
+import React from 'react'
 
 // ==================== Imports =====================//
 
 //
 
+// ==================== Query =====================//
+// ==================== Query =====================//
+
+//
+
 // ==================== Render =====================//
 
-function Home() {
+export default function Home() {
+
   return (
-    <>
+    <React.StrictMode>
+
       <section>
         <p>Hi!, I&#39;m Keith Kyuubi</p>
       </section>
@@ -30,7 +39,7 @@ function Home() {
       <section>
         <p>Welcome to my portfolio website</p>
 
-        <Link href={'/projects'}>projects</Link>
+        <Link href={'/projects'}>View Projects</Link>
 
         <Image
           src="/Images/Aesthetics/EnsoCircle.svg"
@@ -40,9 +49,11 @@ function Home() {
           height={350}
         />
       </section>
-    </>
+
+    </React.StrictMode>
   )
+
 }
 
-export default Home
 // ==================== Render =====================//
+

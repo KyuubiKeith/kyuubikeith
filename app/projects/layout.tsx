@@ -1,19 +1,20 @@
 // ==================== Imports =====================//
 
 // NextJS
-import Image from 'next/image'
 import Link from 'next/link'
-import Head from './head'
-
-
 
 // ==================== Imports =====================//
 
 //
 
+// ==================== Query =====================//
+// ==================== Query =====================//
+
+//
+
 // ==================== Render =====================//
 
-export default async function ProjectsLayout({
+export default function ProjectsLayout({
   children
 }: {
   children: React.ReactNode
@@ -22,20 +23,25 @@ export default async function ProjectsLayout({
 
 
   return (
-    <html>
-      <head />
-      <body>
+    <>
+
+      <header>
+        <h1>
+          List Of Projects.
+        </h1>
+      </header>
+
+      <main>
         {children}
-        <footer>
-          <Link href={'/'}>Back Home</Link>
-        </footer>
-      </body>
-    </html>
+      </main>
+
+      <footer>
+        <Link href={'/'}>Back Home</Link>
+      </footer>
+
+    </>
   )
 }
 
-
-
 // ==================== Render =====================//
-
 
