@@ -18,32 +18,37 @@ import React from 'react'
 
 // ==================== Render =====================//
 
-export default function Projects() {
+export default function Project() {
 
   return (
-
     <React.StrictMode>
-      <ol>
-        <li>
 
-          <header>
-            <h3>Sample Project Title</h3>
-          </header>
+      <header>
+        <h3>Sample Project Title</h3>
+      </header>
 
-          <main>
-            <h5>Sample Project Description</h5>
-          </main>
+      <main>
+        <h5>Sample Project Description</h5>
+      </main>
 
-          <footer>
-            <Link href={'/projects/project-details'}>
-              Sample Project Link
+      <footer>
+
+        <ol>
+          <li>
+            <Link href={'/projects/#previous'}>
+              Previous Project Link
             </Link>
-          </footer>
+          </li>
+          <li>
+            <Link href={'/projects/#next'}>
+              Next Project Link
+            </Link>
+          </li>
+        </ol>
 
-        </li>
-      </ol>
+      </footer>
+
     </React.StrictMode>
-
   )
 }
 
