@@ -16,6 +16,9 @@ import { TypeProjectsFields } from '@/source/organisms/content/contentful'
 //
 
 // ==================== Query =====================//
+
+export const revalidate = 60
+
 // ==================== Query =====================//
 
 //
