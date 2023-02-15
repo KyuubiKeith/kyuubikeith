@@ -47,7 +47,7 @@ export interface TypeProjectsFields {
   fields?: TypeProjectsFields
   project?: TypeProjectsFields
   projectData?: TypeProjectsFields
-  params?: number
+  params?: TypeProjectsFields
   items?: TypeProjectsFields
   map?: any
   sort?: any

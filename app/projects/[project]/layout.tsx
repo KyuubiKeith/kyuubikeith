@@ -1,6 +1,7 @@
 // ==================== Imports =====================//
 
 // NextJS
+import { TypeProjectsFields } from '@/source/organisms/content/contentful'
 import Link from 'next/link'
 
 // ==================== Imports =====================//
@@ -8,6 +9,8 @@ import Link from 'next/link'
 //
 
 // ==================== Query =====================//
+
+
 // ==================== Query =====================//
 
 //
@@ -23,11 +26,11 @@ export default function ProjectLayout({
 
 
   return (
-      <>
-
+    <>
+      
         <header>
           <h1>
-            Sample Project Content.
+            Sample Project Header.
           </h1>
         </header>
 

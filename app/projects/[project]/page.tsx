@@ -4,54 +4,137 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-// React
-import React from 'react'
+import { Client } from '../../../source/organisms/content/contentful'
+import { TypeProjectsFields } from "@/source/organisms/content/contentful";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { BLOCKS, Document } from '@contentful/rich-text-types'
 
 // ==================== Imports =====================//
 
 //
 
 // ==================== Query =====================//
+
+// export async function generateStaticParams(props) {
+// console.log(props)
+//   const { items } = await Client.getEntries({
+//     content_type: 'projects',
+//     'fields.slug': props!.project
+//   })
+  
+//   return [{
+//     slug: 'overriden',
+//   }]
+// }
+
+export async function generateStaticParams() {
+  return [{
+    project: 'overriden',
+  }]
+}
+
+
 // ==================== Query =====================//
 
 //
 
 // ==================== Render =====================//
 
-export default function Project() {
+export default async function Project({ params }: TypeProjectsFields) {
+
+  const { items } = await Client.getEntries({
+    content_type: 'projects',
+    'fields.slug': params!.project
+  })
+
+  const projectData: TypeProjectsFields = items.map(
+    (project) => project.fields
+  )
+
+  // console.log(projectData)
 
   return (
-    <React.StrictMode>
+    <>
+      {projectData
+        .map((project: TypeProjectsFields) => (
+          <div
+            key={project.projectId}
+            className="section"
+            data-anchor={project.slug}
+          >
+            <>
+              <header id="featured-image">
+                <p>Project ID: {project.projectId}</p>
+                {project.featured ? (
+                  <Image
+                    src={'https:' + project.featured?.fields.file.url}
+                    height={project.featured?.fields.file.details.image?.height}
+                    width={project.featured?.fields.file.details.image?.width}
+                    alt={`${project.featured?.fields.title}`}
+                  />
+                ) : (
+                  <p>
+                    <b>No featured Image.</b>
+                  </p>
+                )}
+              </header>
 
-      <header>
-        <h3>Sample Project Title</h3>
-      </header>
+              <main>
+                <section id="brand-identity">
+                  {project.logo ? (
+                    <Image
+                      src={'https:' + project.logo?.fields.file.url}
+                      height={project.logo?.fields.file.details.image?.height}
+                      width={project.logo?.fields.file.details.image?.width}
+                      alt={`${project.name}`}
+                    />
+                  ) : (
+                    <p>Logo Missing</p>
+                  )}
 
-      <main>
-        <h5>Sample Project Description</h5>
-      </main>
+                  <div id="project-details">
+                    <>
+                      <h6>Client</h6>
+                      <p>{project.client}</p>
+                    </>
+                    <>
+                      <h6>Project</h6>
+                      <p>{project.work}</p>
+                    </>
+                  </div>
 
-      <footer>
+                  <div id="case-study">
+                    <h6>Case Study</h6>
+                    {documentToReactComponents(project.caseStudy as Document)}
 
-        <ol>
-          <li>
-            <Link href={'/projects/#previous'}>
-              Previous Project Link
-            </Link>
-          </li>
-          <li>
-            <Link href={'/projects/#next'}>
-              Next Project Link
-            </Link>
-          </li>
-        </ol>
+                    <div id="project-gallery">
+                      {project.featured ? (
+                        <Image
+                          src={'https:' + project.featured.fields.file.url}
+                          height={project.featured.fields.file.details.image?.height}
+                          width={project.featured.fields.file.details.image?.width}
+                          alt={project.featured.fields.title}
+                        />
+                      ) : (
+                        <p>
+                          <b>No featured Image.</b>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </section>
+              </main>
+            </>
+          </div>
+        ))
+      }
+    </>
 
-      </footer>
-
-    </React.StrictMode>
   )
 }
 
 
 // ==================== Render =====================//
+
+
 
