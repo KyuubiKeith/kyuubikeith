@@ -36,7 +36,8 @@ export const revalidate = 60
 export default function Projects() {
 
   const opts = {
-    licenseKey: 'gplv3-license'
+    licenseKey: 'gplv3-license',
+    scrollOverflow: true 
   }
 
   return (
