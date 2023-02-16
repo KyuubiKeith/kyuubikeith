@@ -37,15 +37,15 @@ export default function Projects() {
 
   const opts = {
     licenseKey: 'gplv3-license',
-    scrollOverflow: false 
+    scrollOverflow: false,
+    responsiveWidth: 900,
   }
 
   return (
 
     <ReactFullpage
       {...opts}
-      scrollOverflow={false}
-      render={({ state, fullpageApi }) => {
+     render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
             <Projectslist />
