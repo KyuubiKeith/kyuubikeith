@@ -44,6 +44,7 @@ export default function Projects() {
 
     <ReactFullpage
       {...opts}
+      scrollOverflow={true}
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
