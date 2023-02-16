@@ -1,7 +1,7 @@
 // ==================== Imports =====================//
 
 // Styling
-import '../source/blerdCorps.scss'
+// import '../source/blerdCorps.scss'
 
 
 // ==================== Imports =====================//

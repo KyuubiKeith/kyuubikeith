@@ -28,6 +28,15 @@ import { BLOCKS, Document } from '@contentful/rich-text-types'
 // }
 
 export async function generateStaticParams() {
+
+  const { items } = await Client.getEntries({
+    content_type: 'projects'
+  })
+
+  const projectData: TypeProjectsFields = items.map(
+    (project) => project.fields
+  )
+
   return [{
     project: 'overriden',
   }]
@@ -124,12 +133,49 @@ export default async function Project({ params }: TypeProjectsFields) {
                   </div>
                 </section>
               </main>
+
+              <footer>
+
+                <ol>
+
+                  {/* <li>
+                    <Link
+                      // href={`/projects/${projectId}`}
+                      href={{
+                        pathname: `/projects/${project.projectId! + 1}`,
+                      }}
+                      as={`/projects/${project.projectId! + 1}`}
+                    >Next Project</Link>
+
+                  </li>
+
+                  <li>
+                    <Link
+                      // href={`/projects/${projectId}`}
+                      href={{
+                        pathname: `/projects/${project.projectId! + 1}`,
+                      }}
+                      as={`/projects/${project.projectId! - 1}`}
+                    >Previous Project</Link>
+
+                  </li> */}
+
+                  <li>
+                    <Link href={`/projects#${project.slug}`}>Back To Projects</Link>
+                  </li>
+
+                  <li>
+                    <Link href={'/'}>Back Home</Link>
+                  </li>
+                </ol>
+
+              </footer>
+
             </>
           </div>
         ))
       }
     </>
-
   )
 }
 
