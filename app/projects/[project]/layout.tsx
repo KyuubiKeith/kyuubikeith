@@ -23,8 +23,7 @@ export default function ProjectLayout({
   children: React.ReactNode
 }) {
 
-
-
+  
   return (
     <>
       
@@ -38,18 +37,7 @@ export default function ProjectLayout({
           {children}
         </main>
 
-        <footer>
 
-          <ol>
-            <li>
-              <Link href={'/projects'}>Back To Projects</Link>
-            </li>
-            <li>
-              <Link href={'/'}>Back Home</Link>
-            </li>
-          </ol>
-          
-        </footer>
 
       </>
   )
