@@ -28,8 +28,17 @@ import { BLOCKS, Document } from '@contentful/rich-text-types'
 // }
 
 export async function generateStaticParams() {
+
+  const { items } = await Client.getEntries({
+    content_type: 'projects'
+  })
+
+  const projectData: TypeProjectsFields = items.map(
+    (project) => project.fields
+  )
+
   return [{
-    project: 'overriden',
+    project: projectData.map((project: TypeProjectsFields) => (project.projectId)),
   }]
 }
 
