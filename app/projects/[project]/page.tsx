@@ -38,7 +38,7 @@ export async function generateStaticParams() {
   )
 
   return [{
-    project: projectData.map((project: TypeProjectsFields) => (project.projectId)),
+    project: 'overriden',
   }]
 }
 
@@ -53,7 +53,7 @@ export default async function Project({ params }: TypeProjectsFields) {
 
   const { items } = await Client.getEntries({
     content_type: 'projects',
-    'fields.projectId': params!.project
+    'fields.slug': params!.project
   })
 
   const projectData: TypeProjectsFields = items.map(
@@ -138,7 +138,7 @@ export default async function Project({ params }: TypeProjectsFields) {
 
                 <ol>
 
-                  <li>
+                  {/* <li>
                     <Link
                       // href={`/projects/${projectId}`}
                       href={{
@@ -158,7 +158,7 @@ export default async function Project({ params }: TypeProjectsFields) {
                       as={`/projects/${project.projectId! - 1}`}
                     >Previous Project</Link>
 
-                  </li>
+                  </li> */}
 
                   <li>
                     <Link href={`/projects#${project.slug}`}>Back To Projects</Link>

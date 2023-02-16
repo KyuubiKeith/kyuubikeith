@@ -61,7 +61,7 @@ export default function Projectslist() {
                 href={{
                   pathname: `/projects/${project.projectId}`
                 }}
-                as={`/projects/${project.projectId}`}
+                as={`/projects/${project.slug}`}
               >
                 <h3> Explore {project.name}</h3>
               </Link>
