@@ -36,21 +36,21 @@ export interface TypeBrandIdentityFields {
 
 export interface TypeProjectsFields {
   projectId?: Contentful.EntryFields.Integer | number
-  name?: Contentful.EntryFields.Symbol
-  slug?: Contentful.EntryFields.Symbol
-  logo?: Contentful.Asset
-  client?: Contentful.EntryFields.Symbol
-  work?: Contentful.EntryFields.Symbol
-  featured?: Contentful.Asset
-  caseStudy?: CFRichTextTypes.Block | CFRichTextTypes.Inline
-  featuredImageLink?: CFRichTextTypes.Block | CFRichTextTypes.Inline
-  fields?: TypeProjectsFields
-  project?: TypeProjectsFields
-  projectData?: TypeProjectsFields
-  params?: TypeProjectsFields
-  items?: TypeProjectsFields
-  map?: any
-  sort?: any
+  name: Contentful.EntryFields.Symbol
+  slug: Contentful.EntryFields.Symbol
+  logo: Contentful.Asset
+  client: Contentful.EntryFields.Symbol
+  work: Contentful.EntryFields.Symbol
+  featured: Contentful.Asset
+  caseStudy: CFRichTextTypes.Block | CFRichTextTypes.Inline
+  featuredImageLink: CFRichTextTypes.Block | CFRichTextTypes.Inline
+  fields: TypeProjectsFields
+  project: TypeProjectsFields
+  projectData: TypeProjectsFields
+  params: TypeProjectsFields
+  items: TypeProjectsFields
+  map: any
+  sort: any
 }
 
 // ==================== Interfaces =====================//
