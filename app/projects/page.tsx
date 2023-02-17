@@ -11,6 +11,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 // Fullpage JS
+// @ts-ignore
 import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage'
 
 // List
@@ -61,35 +62,75 @@ export const revalidate = 60
 //   )
 // }
 
-export default class App extends Component {
-  render() {
-    return (
-      <Fullpage>
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <Fullpage>
 
-        <FullPageSections>
+//         <FullPageSections>
 
-          <FullpageSection style={{
-            backgroundColor: 'lime',
-            height: '100vh',
-            padding: '1em',
-          }}>1</FullpageSection>
-          <FullpageSection style={{
-            backgroundColor: 'coral',
-            padding: '1em',
-          }}>2</FullpageSection>
-          <FullpageSection style={{
-            backgroundColor: 'firebrick',
-            padding: '1em',
-          }}>3</FullpageSection>
+//           <FullpageSection style={{
+//             backgroundColor: 'lime',
+//             height: '100vh',
+//             padding: '1em',
+//           }}>1</FullpageSection>
+//           <FullpageSection style={{
+//             backgroundColor: 'coral',
+//             padding: '1em',
+//           }}>2</FullpageSection>
+//           <FullpageSection style={{
+//             backgroundColor: 'firebrick',
+//             padding: '1em',
+//           }}>3</FullpageSection>
 
-        </FullPageSections>
+//         </FullPageSections>
 
-      </Fullpage>
-    )
+//       </Fullpage>
+//     )
+//   }
+// }
+
+export default function Projects() {
+
+  const anchors = ["firstPage", "secondPage", "thirdPage"]
+  const opts = {
+    licenseKey: 'gplv3-license',
+    scrollOverflow: false,
+    responsiveWidth: 400,
+    responsiveHeight: 900,
+    sectionsColor :  ["#7fff00", "#00ffff", "#29ab87"]
   }
+
+  return (
+
+    <Fullpage>
+
+      <FullPageSections>
+
+        <FullpageSection style={{
+          backgroundColor: 'lime',
+          height: '100vh',
+          padding: '1em',
+        }}>1</FullpageSection>
+        <FullpageSection style={{
+          backgroundColor: 'coral',
+          padding: '1em',
+        }}>2</FullpageSection>
+        <FullpageSection style={{
+          backgroundColor: 'firebrick',
+          padding: '1em',
+        }}>3</FullpageSection>
+
+      </FullPageSections>
+
+    </Fullpage>
+
+  )
 }
 
 
 // ==================== Render =====================//
+
+
 
 
