@@ -40,6 +40,9 @@ export default function Projects() {
     // @ts-ignore
     <ReactFullpage
       {...opts}
+      // anchors={anchors}
+      navigation
+      // navigationTooltips={anchors}
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
