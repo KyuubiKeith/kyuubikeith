@@ -41,6 +41,7 @@ async function getProjects() {
 
 export default function Projectslist() {
   const projectData = use(getProjects())
+
   return (
 
     <>
@@ -55,8 +56,12 @@ export default function Projectslist() {
             style={{
               backgroundColor: 'lime',
               height: '100vh',
-              padding: '1em',
-              backgroundImage: ''
+              width: '100vw',
+              display: 'flex',
+              alignItems: 'center',
+              // justifyContent: 'center',
+              backgroundImage: `url(${'https:' + project.featured?.fields.file.url})`,
+              backgroundSize: 'cover'
             }}>
             <header>
               <p>{project.projectId}</p>

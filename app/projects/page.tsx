@@ -12,7 +12,7 @@ import Image from 'next/image'
 
 // Fullpage JS
 // @ts-ignore
-import Fullpage, { FullPageSections } from '@ap.cx/react-fullpage'
+import Fullpage, { FullPageSections, FullpageNavigation } from '@ap.cx/react-fullpage'
 
 // List
 import Projectslist from "./projectslist"
@@ -34,8 +34,8 @@ export const revalidate = 60
 export default function Projects() {
 
   return (
-
     <Fullpage>
+      <FullpageNavigation />
       <FullPageSections>
         <Projectslist />
       </FullPageSections>
