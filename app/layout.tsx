@@ -1,10 +1,8 @@
 // ==================== Imports =====================//
 
-//Next JS
-import type { AppProps } from 'next/app'
-
 // Styling
 import '../source/blerdCorps.scss'
+
 
 // ==================== Imports =====================//
 
@@ -16,10 +14,22 @@ import '../source/blerdCorps.scss'
 //
 
 // ==================== Render =====================//
-function Initium({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+
+export default function RootLayout({
+  children
+}: {
+  children: React.ReactNode
+}) {
+
+  return (
+    <html>
+      <head />
+      <body>
+        {children}
+      </body>
+    </html>
+  )
 }
 
-export default Initium
 // ==================== Render =====================//
 

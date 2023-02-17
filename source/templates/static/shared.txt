@@ -11,3 +11,259 @@
 // ==================== Render =====================//
 // ==================== Render =====================//
 
+
+// ==================== Imports =====================//
+
+// NextJS
+import Link from 'next/link'
+import Image from 'next/image'
+
+import { Client } from '../../../source/organisms/content/contentful'
+import { TypeProjectsFields } from "@/source/organisms/content/contentful";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { BLOCKS, Document } from '@contentful/rich-text-types'
+
+// ==================== Imports =====================//
+
+//
+
+// ==================== Query =====================//
+// ==================== Query =====================//
+
+//
+
+// ==================== Render =====================//
+
+// export async function generateStaticParams({params}) {
+
+//   const data = await Client.getEntries({
+//     content_type: 'projects'
+//   })
+
+//   const res = await data
+
+//   return res.items.map((project) => ({
+//     project: toString(params!.project),
+//   }))
+
+//   console.log(data)
+
+
+//   //   return data.items.map((project) => ({
+//   //     project: toString(project.fields.slug),
+//   //   }))
+//   // }
+
+
+
+//   // export async function generateStaticParams({ params }: TypeProjectsFields) {
+
+//   //   const data = await Client.getEntries({
+//   //     content_type: 'projects'
+//   //   })
+
+//   //   const paths: TypeProjectsFields = data.items.map((project) => {
+//   //     return {
+//   //       params: { project: project.fields }
+//   //     }
+//   //   })
+
+//   //   console.log(paths)
+
+// }
+
+/** Generate Individual Page Data **/
+// export const getStaticProps: GetStaticProps = async ({ params }) => {
+//   const { items } = await Client.getEntries({
+//     content_type: 'projects',
+//     'fields.slug': params!.project
+//   })
+//   if (!items.length) {
+//     return {
+//       redirect: {
+//         destination: '/',
+//         permanent: false
+//       }
+//     }
+//   }
+
+//   return {
+//     props: {
+//       project: items[0]
+//     },
+//     revalidate: 1
+//   }
+// }
+
+
+// getStaticProps in Next13
+// async function getProjectData({params}: TypeProjectsFields) {
+
+//   const project = await Client.getEntries({
+//     content_type: 'projects', // <-- set content_type
+//     'fields.projectId': params     // <-- filter the page with the slug (you can pass it as a props too)
+//   })
+
+//   console.log(data)
+//   return data
+
+// }
+
+// getStaticPaths in Next13
+export async function generateStaticParams() {
+
+    const data = await Client.getEntries({
+    content_type: 'projects', // <-- set content_type
+    // 'fields.projectId': params     // <-- filter the page with the slug (you can pass it as a props too)
+  })
+  // console.log("Project Name:", data.items);
+
+  // return [{
+  //   slug: 'overriden',
+  // }]
+
+  const projectSlug: TypeProjectsFields = data.items.map(
+    (project) => project.fields
+  )
+
+  // console.log(projectSlug.slug)
+
+  return projectSlug.map((c: { name: string; }) => ({
+    slug: c?.name.replace(/\s+/g, "-").toLowerCase()
+  }))
+
+}
+
+export default async function Project({ params }: TypeProjectsFields) {
+
+  // const { items } = await Client.getEntries({
+  //   content_type: 'projects', // <-- set content_type
+  //   'fields.projectId': params     // <-- filter the page with the slug (you can pass it as a props too)
+  // })
+
+  // const {
+  //   projectId,
+  //   name,
+  //   slug,
+  //   logo,
+  //   client,
+  //   work,
+  //   featured,
+  //   featuredImageLink,
+  //   caseStudy
+  // } = params as TypeProjectsFields
+
+  // console.log(params)
+  // console.log(items[projectId].fields)
+
+  return (
+    <>
+
+      <header>
+        <h3>Sample Project Title</h3>
+      </header>
+
+      <main>
+        <h5>Sample Project Description</h5>
+
+        <>
+          <h6>Client</h6>
+          {/* <p>{name}</p> */}
+          {/* {items['fields']} */}
+        </>
+        <>
+          <h6>Project</h6>
+          {/* <p>{work}</p> */}
+        </>
+
+      </main>
+
+      <footer>
+
+        <ol>
+          <li>
+            <Link href={'/projects/#previous'}>
+              Previous Project Link
+            </Link>
+          </li>
+          <li>
+            <Link href={'/projects/#next'}>
+              Next Project Link
+            </Link>
+          </li>
+        </ol>
+
+      </footer>
+
+    </>
+
+    // <>
+    //   <header id="featured-image">
+    //     <p>Project ID: {projectId}</p>
+    //     {featured ? (
+    //       <Image
+    //         src={'https:' + featured.fields.file.url}
+    //         height={featured.fields.file.details.image?.height}
+    //         width={featured.fields.file.details.image?.width}
+    //         alt={featured.fields.title}
+    //       />
+    //     ) : (
+    //       <p>
+    //         <b>No featured Image.</b>
+    //       </p>
+    //     )}
+    //   </header>
+
+    //   <main>
+    //     <section id="brand-identity">
+    //       {logo ? (
+    //         <Image
+    //           src={'https:' + logo.fields.file.url}
+    //           height={logo.fields.file.details.image?.height}
+    //           width={logo.fields.file.details.image?.width}
+    //           alt={`${name}`}
+    //         />
+    //       ) : (
+    //         <p>Logo Missing</p>
+    //       )}
+
+    //       <div id="project-details">
+    //         <>
+    //           <h6>Client</h6>
+    //           <p>{client}</p>
+    //         </>
+    //         <>
+    //           <h6>Project</h6>
+    //           <p>{work}</p>
+    //         </>
+    //       </div>
+
+    //       <div id="case-study">
+    //         <h6>Case Study</h6>
+    //         {documentToReactComponents(caseStudy as Document)}
+
+    //         <div id="project-gallery">
+    //           {featured ? (
+    //             <Image
+    //               src={'https:' + featured.fields.file.url}
+    //               height={featured.fields.file.details.image?.height}
+    //               width={featured.fields.file.details.image?.width}
+    //               alt={featured.fields.title}
+    //             />
+    //           ) : (
+    //             <p>
+    //               <b>No featured Image.</b>
+    //             </p>
+    //           )}
+    //         </div>
+    //       </div>
+    //     </section>
+    //   </main>
+    // </>
+  )
+}
+
+
+// ==================== Render =====================//
+
+

@@ -1,17 +1,28 @@
 // ==================== Imports =====================//
 
 // NextJS
-import type { NextPage } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
+
+// React
+import React from 'react'
 
 // ==================== Imports =====================//
 
 //
 
+// ==================== Query =====================//
+// ==================== Query =====================//
+
+//
+
 // ==================== Render =====================//
-const Home: NextPage = () => {
+
+export default function Home() {
+
   return (
-    <>
+    <React.StrictMode>
+
       <section>
         <p>Hi!, I&#39;m Keith Kyuubi</p>
       </section>
@@ -19,23 +30,30 @@ const Home: NextPage = () => {
       <section>
         <p>I&#39;m a:</p>
 
-        <h2>Frontend Web Developer, <br /> Brand Identity Designer <br />& UIX Designer.</h2>
+        <h2>
+          Frontend Web Developer, <br /> Brand Identity Designer <br />& UIX
+          Designer.
+        </h2>
       </section>
 
       <section>
         <p>Welcome to my portfolio website</p>
 
+        <Link href={'/projects'}>View Projects</Link>
+
         <Image
           src="/Images/Aesthetics/EnsoCircle.svg"
-          className='Enso'
+          className="Enso"
           alt="Enso Circle"
           width={350}
           height={350}
         />
       </section>
-    </>
+
+    </React.StrictMode>
   )
+
 }
 
-export default Home
 // ==================== Render =====================//
+

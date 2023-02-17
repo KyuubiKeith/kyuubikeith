@@ -1,16 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
-
-module.exports = {
-  nextConfig,
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en'
+  experimental: {
+    appDir: true
   },
   images: {
     domains: ['images.ctfassets.net', 'unsplash.com']
   }
 }
+
+module.exports = nextConfig
