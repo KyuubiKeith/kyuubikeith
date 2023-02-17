@@ -12,7 +12,7 @@ import Image from 'next/image'
 
 // Fullpage JS
 // @ts-ignore
-import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage'
+import Fullpage, { FullPageSections } from '@ap.cx/react-fullpage'
 
 // List
 import Projectslist from "./projectslist"
@@ -31,6 +31,21 @@ export const revalidate = 60
 
 // ==================== Render =====================//
 
+export default function Projects() {
+
+  return (
+
+    <Fullpage>
+      <FullPageSections>
+        <Projectslist />
+      </FullPageSections>
+    </Fullpage>
+
+  )
+}
+
+// ==================== Render =====================//
+
 // export default function Projects() {
 
 //   const anchors = ["firstPage", "secondPage", "thirdPage"]
@@ -39,7 +54,7 @@ export const revalidate = 60
 //     scrollOverflow: false,
 //     responsiveWidth: 400,
 //     responsiveHeight: 900,
-//     sectionsColor :  ["#7fff00", "#00ffff", "#29ab87"]
+//     sectionsColor: ["#7fff00", "#00ffff", "#29ab87"]
 //   }
 
 //   return (
@@ -89,47 +104,6 @@ export const revalidate = 60
 //     )
 //   }
 // }
-
-export default function Projects() {
-
-  const anchors = ["firstPage", "secondPage", "thirdPage"]
-  const opts = {
-    licenseKey: 'gplv3-license',
-    scrollOverflow: false,
-    responsiveWidth: 400,
-    responsiveHeight: 900,
-    sectionsColor :  ["#7fff00", "#00ffff", "#29ab87"]
-  }
-
-  return (
-
-    <Fullpage>
-
-      <FullPageSections>
-
-        <FullpageSection style={{
-          backgroundColor: 'lime',
-          height: '100vh',
-          padding: '1em',
-        }}>1</FullpageSection>
-        <FullpageSection style={{
-          backgroundColor: 'coral',
-          padding: '1em',
-        }}>2</FullpageSection>
-        <FullpageSection style={{
-          backgroundColor: 'firebrick',
-          padding: '1em',
-        }}>3</FullpageSection>
-
-      </FullPageSections>
-
-    </Fullpage>
-
-  )
-}
-
-
-// ==================== Render =====================//
 
 
 
