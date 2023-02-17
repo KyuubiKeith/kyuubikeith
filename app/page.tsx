@@ -1,0 +1,59 @@
+// ==================== Imports =====================//
+
+// NextJS
+import Image from 'next/image'
+import Link from 'next/link'
+
+// React
+import React from 'react'
+
+// ==================== Imports =====================//
+
+//
+
+// ==================== Query =====================//
+// ==================== Query =====================//
+
+//
+
+// ==================== Render =====================//
+
+export default function Home() {
+
+  return (
+    <React.StrictMode>
+
+      <section>
+        <p>Hi!, I&#39;m Keith Kyuubi</p>
+      </section>
+
+      <section>
+        <p>I&#39;m a:</p>
+
+        <h2>
+          Frontend Web Developer, <br /> Brand Identity Designer <br />& UIX
+          Designer.
+        </h2>
+      </section>
+
+      <section>
+        <p>Welcome to my portfolio website</p>
+
+        <Link href={'/projects'}>View Projects</Link>
+
+        <Image
+          src="/Images/Aesthetics/EnsoCircle.svg"
+          className="Enso"
+          alt="Enso Circle"
+          width={350}
+          height={350}
+        />
+      </section>
+
+    </React.StrictMode>
+  )
+
+}
+
+// ==================== Render =====================//
+

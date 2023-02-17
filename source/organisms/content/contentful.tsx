@@ -32,10 +32,10 @@ export interface TypeBrandIdentityFields {
   jobDescription?: Contentful.EntryFields.Symbol
   aboutMe?: CFRichTextTypes.Block | CFRichTextTypes.Inline
   myLocation?: Contentful.EntryFields.Location
-  fields: any
 }
 
 export interface TypeProjectsFields {
+  projectId?: Contentful.EntryFields.Integer | number
   name?: Contentful.EntryFields.Symbol
   slug?: Contentful.EntryFields.Symbol
   logo?: Contentful.Asset
@@ -44,15 +44,13 @@ export interface TypeProjectsFields {
   featured?: Contentful.Asset
   caseStudy?: CFRichTextTypes.Block | CFRichTextTypes.Inline
   featuredImageLink?: CFRichTextTypes.Block | CFRichTextTypes.Inline
-  fields: any
-  project: any
+  fields?: TypeProjectsFields
+  project?: TypeProjectsFields
+  projectData?: TypeProjectsFields
+  params?: TypeProjectsFields
+  items?: TypeProjectsFields
+  map?: any
+  sort?: any
 }
 
 // ==================== Interfaces =====================//
-
-
-
-
-
-
-

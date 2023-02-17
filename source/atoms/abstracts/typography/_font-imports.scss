@@ -1,0 +1,284 @@
+$fonts-path: "/Fonts/";
+
+/*==================== Display ====================*/
+
+/*  Ammonite */
+
+// Ammonite
+
+/*==================== Display ====================*/
+
+
+
+/*==================== Serif ====================*/
+
+/* Bree Serif */
+
+@font-face {
+  font-family: "Bree Serif Regular";
+  src: url($fonts-path+"Serif/Bree-Serif.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bree Serif Light";
+  src: url($fonts-path+"Serif/Bree-Serif-W04-Thin.woff") format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* Bree Serif */
+
+
+/* BitStream Cooper [BT] */
+
+// Medium
+@font-face {
+  font-family: "BT Cooper Medium";
+  src: url($fonts-path+"Serif/CooperBTW01-Medium.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BT Cooper MediumItalic";
+  src: url($fonts-path+"Serif/CooperBTW01-MediumItalic.woff2") format('woff2');
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+}
+
+// Light
+@font-face {
+  font-family: "BT Cooper Light";
+  src: url($fonts-path+"Serif/CooperBT-Light.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BT Cooper LightItalic";
+  src: url($fonts-path+"Serif/CooperBT-LightItalic.woff2") format('woff2');
+  // font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* BitStream Cooper [BT] */
+
+
+/* Fontin */
+
+@font-face {
+  font-family: "Fontin Bold";
+  src: url($fonts-path+"Serif/Fontin-Bold.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fontin Regular";
+  src: url($fonts-path+"Serif/Fontin Regular.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* Fontin */
+
+
+/* Gooper Semi Condensed */
+
+@font-face {
+  font-family: "Gooper SemiCondensed";
+  src: url($fonts-path+"Serif/") format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+/* Means Web */
+
+
+/* Means Web */
+
+@font-face {
+  font-family: "Means Web Light";
+  src: url($fonts-path+"Serif/Means-Light-Web.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* Means Web */
+
+/*==================== Serif ====================*/
+
+
+
+
+
+
+
+/*==================== Sans Serif  ====================*/
+
+/* Surco */
+
+@font-face {
+  font-family: "Surco Light";
+  src: url("/Fonts/Sans Serif/SurcoLight.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 200;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Black Sans Regular";
+  src: url("/Fonts/Sans Serif/Black_Sans_Condensed_Book.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Black Sans Light";
+  src: url("/Fonts/Sans Serif/blacksanslightwebfont.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+/* Surco */
+
+/* Circular Air Pro */
+
+@font-face {
+  font-family: "Circular Book";
+  src: url($fonts-path+"Sans Serif/CircularAirPro-Book.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Light";
+  src: url($fonts-path+"Sans Serif/CircularAirPro-Light.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+/* Circular Air Pro */
+
+
+/* Marselis Pro */
+
+// Medium
+@font-face {
+  font-family: "Marselis";
+  src: url($fonts-path+"Sans Serif/MarselisPro.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Marselis Italic";
+  src: url($fonts-path+"Sans Serif/MarselisWeb W03 Italic.woff2") format('woff2');
+  // font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+
+// Light
+@font-face {
+  font-family: "Marselis Light";
+  src: url($fonts-path+"Sans Serif/MarselisPro-light.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Marselis LightItalic";
+  src: url($fonts-path+"Sans Serif/MarselisWeb W03 LightItalic.woff2") format('woff2');
+  // font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+}
+
+/* Marselis Pro */
+
+
+/* Söhne */
+
+@font-face {
+  font-family: "Söhne Light";
+  src: url($fonts-path+"Sans Serif/Sohne-Leicht.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Söhne extraLight";
+  src: url($fonts-path+"Sans Serif/") format('woff2');
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+/* Söhne */
+
+
+/* Averta */
+
+@font-face {
+  font-family: "Averta RegularItalic";
+  src: url($fonts-path+"Sans Serif/averta-regularitalic.woff2") format('woff2');
+  // font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Averta LightItalic";
+  src: url($fonts-path+"Sans Serif/averta-thinitalic.woff2") format('woff2');
+  // font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+}
+
+/* Averta */
+
+
+/* Overlock */
+
+@font-face {
+  font-family: "Overlock";
+  src: url($fonts-path+"Serif/Overlock.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Overlock */
+
+/*==================== Sans Serif  ====================*/
+
+
+
+
+
+
+
+
+
+
+
