@@ -45,6 +45,7 @@ export default function Projects() {
     <ReactFullpage
       {...opts}
       responsiveWidth={600}
+      responsiveHeight={800}
       scrollOverflow={false}
       render={({ state, fullpageApi }) => {
         return (
