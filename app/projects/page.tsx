@@ -32,7 +32,7 @@ export const revalidate = 60
 export default function Projects() {
 
   const opts = {
-    licenseKey: 'gplv3-license'
+    licenseKey: 'gplv3-license',
   }
 
   return (
@@ -40,6 +40,7 @@ export default function Projects() {
     // @ts-ignore
     <ReactFullpage
       {...opts}
+      scrollOverflow={true}
       responsiveWidth={800}
       // anchors={anchors}
       navigation
