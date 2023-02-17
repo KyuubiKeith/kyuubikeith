@@ -10,6 +10,10 @@ import Link from 'next/link'
 import { Client } from '@/source/organisms/content/contentful'
 import { TypeProjectsFields } from '@/source/organisms/content/contentful'
 
+// Fullpage JS
+// @ts-ignore
+import { FullpageSection } from '@ap.cx/react-fullpage'
+
 // ==================== Imports =====================//
 
 //
@@ -37,18 +41,23 @@ async function getProjects() {
 
 export default function Projectslist() {
   const projectData = use(getProjects())
+
   return (
+
     <>
       {projectData
         .sort((a: { projectId: number }, b: { projectId: number }) => {
           return a.projectId - b.projectId
         })
         .map((project: TypeProjectsFields) => (
-          <div
+          <FullpageSection
             key={project.projectId}
-            className="section fp-auto-height-responsive"
             data-anchor={project.slug}
-          >
+            scrollSpeed={1000}
+            style={{
+              backgroundImage: `url(${'https:' + project.featured?.fields.file.url})`,
+              backgroundSize: 'cover',
+            }}>
             <header>
               <p>{project.projectId}</p>
             </header>
@@ -66,11 +75,12 @@ export default function Projectslist() {
                 <h3> Explore {project.name}</h3>
               </Link>
             </main>
-          </div>
+          </FullpageSection>
         ))}
+
     </>
+
   )
 }
 
 // ==================== Render =====================//
-

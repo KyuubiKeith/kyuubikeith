@@ -2,15 +2,10 @@
 
 'use client'
 
-//React
-import { use } from "react"
-
-// NextJS
-import Link from 'next/link'
-import Image from 'next/image'
 
 // Fullpage JS
-import ReactFullpage from '@fullpage/react-fullpage'
+// @ts-ignore
+import Fullpage, { FullPageSections, FullpageNavigation } from '@ap.cx/react-fullpage'
 
 // List
 import Projectslist from "./projectslist"
@@ -31,32 +26,15 @@ export const revalidate = 60
 
 export default function Projects() {
 
-  const opts = {
-    licenseKey: 'gplv3-license',
-  }
-
   return (
-
-    // @ts-ignore
-    <ReactFullpage
-      {...opts}
-      scrollOverflow={true}
-      responsiveWidth={800}
-      // anchors={anchors}
-      navigation
-      // navigationTooltips={anchors}
-      render={({ state, fullpageApi }) => {
-        return (
-          <ReactFullpage.Wrapper>
-            <Projectslist />
-          </ReactFullpage.Wrapper>
-        )
-      }}
-    />
+    <Fullpage>
+      {/* <FullpageNavigation className={'nav-dots' } /> */}
+      <FullPageSections>
+        <Projectslist />
+      </FullPageSections>
+    </Fullpage>
 
   )
 }
 
-
 // ==================== Render =====================//
-
