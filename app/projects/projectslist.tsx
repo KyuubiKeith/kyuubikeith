@@ -46,7 +46,7 @@ export default function Projectslist() {
         .map((project: TypeProjectsFields) => (
           <div
             key={project.projectId}
-            className="section"
+            className="section fp-auto-height-responsive"
             data-anchor={project.slug}
           >
             <header>
