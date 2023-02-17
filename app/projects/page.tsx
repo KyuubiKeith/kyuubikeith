@@ -4,17 +4,14 @@
 
 //React
 import { use } from "react"
+import React, { Component } from 'react'
 
 // NextJS
 import Link from 'next/link'
 import Image from 'next/image'
 
-// Contentful Client
-import { Client } from '@/source/organisms/content/contentful'
-import { TypeProjectsFields } from '@/source/organisms/content/contentful'
-
 // Fullpage JS
-import ReactFullpage from '@fullpage/react-fullpage'
+import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage'
 
 // List
 import Projectslist from "./projectslist"
@@ -33,32 +30,66 @@ export const revalidate = 60
 
 // ==================== Render =====================//
 
-export default function Projects() {
+// export default function Projects() {
 
-  const opts = {
-    licenseKey: 'gplv3-license',
-    scrollOverflow: false,
+//   const anchors = ["firstPage", "secondPage", "thirdPage"]
+//   const opts = {
+//     licenseKey: 'gplv3-license',
+//     scrollOverflow: false,
+//     responsiveWidth: 400,
+//     responsiveHeight: 900,
+//     sectionsColor :  ["#7fff00", "#00ffff", "#29ab87"]
+//   }
+
+//   return (
+
+//     <ReactFullpage
+//       {...opts}
+//       onLeave={(origin, destination, direction) => {
+//         // console.log("onLeave event", { origin, destination, direction });
+//       }}
+//       render={({ state, fullpageApi }) => {
+//         // console.log("render prop change", state, fullpageApi);
+//         return (
+//           <ReactFullpage.Wrapper>
+//             <Projectslist />
+//           </ReactFullpage.Wrapper>
+//         )
+//       }}
+//     />
+
+//   )
+// }
+
+export default class App extends Component {
+  render() {
+    return (
+      <Fullpage>
+
+        <FullPageSections>
+
+          <FullpageSection style={{
+            backgroundColor: 'lime',
+            height: '100vh',
+            padding: '1em',
+          }}>1</FullpageSection>
+          <FullpageSection style={{
+            backgroundColor: 'coral',
+            padding: '1em',
+          }}>2</FullpageSection>
+          <FullpageSection style={{
+            backgroundColor: 'firebrick',
+            padding: '1em',
+          }}>3</FullpageSection>
+
+        </FullPageSections>
+
+      </Fullpage>
+    )
   }
-
-  return (
-
-    <ReactFullpage
-      {...opts}
-      responsiveWidth={600}
-      responsiveHeight={800}
-      scrollOverflow={false}
-      render={({ state, fullpageApi }) => {
-        return (
-          <ReactFullpage.Wrapper>
-            <Projectslist />
-          </ReactFullpage.Wrapper>
-        )
-      }}
-    />
-
-  )
 }
 
 
 // ==================== Render =====================//
+
 
