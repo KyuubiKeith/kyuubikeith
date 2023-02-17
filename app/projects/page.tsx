@@ -40,6 +40,7 @@ export default function Projects() {
     // @ts-ignore
     <ReactFullpage
       {...opts}
+      responsiveWidth={800}
       // anchors={anchors}
       navigation
       // navigationTooltips={anchors}
